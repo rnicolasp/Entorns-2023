@@ -43,5 +43,10 @@ public class NumbersCatTest {
     public void donat40() {
         assertEquals(("Quaranta"), NumbersCat.say(40l));
     }
+
+    @Test
+    public void donat21() {
+        assertEquals(("Vint-i-un"), NumbersCat.say(21l));
+    }
 }
 
