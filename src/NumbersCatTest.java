@@ -18,4 +18,9 @@ public class NumbersCatTest {
 
     @Test
     public void donar_30_retorna_Trenta() { assertEquals("Dos", NumbersCat.say(30l));}
+
+    @Test
+    public void donat_39() {assertEquals("Trenta-nou"), NumbersCat.say(39);}
+    
+    }
 }

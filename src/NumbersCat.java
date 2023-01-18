@@ -30,8 +30,16 @@ public class NumbersCat {
         switch ((int) n){
             case 30:
                 return "Trenta";
-            default:
-                return "";
         }
+
+        int unidad = 0;
+        int decena = 0;
+        if( n > 30){
+            unidad = (int)n % 10;
+            decena = (int)n / 10;
+            say(decena);
+            return say(decena) + "-" + say(unidad).toLowerCase();
+        }
+        return null;
     }
 }
