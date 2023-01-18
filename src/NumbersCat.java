@@ -50,13 +50,32 @@ public class NumbersCat {
 
         int unidad = 0;
         int decena = 0;
-        if (n > 20) {
+        if (n > 20 && n < 100) {
             unidad = (int) n % 10;
             decena = 10 * ((int) n / 10);
-            if (n < 30){
-                return say(decena)+ "-i-" + say(unidad).toLowerCase();
+            if (n < 30) {
+                return say(decena) + "-i-" + say(unidad).toLowerCase();
             }
             return say(decena) + "-" + say(unidad).toLowerCase();
+        }
+
+
+        if (n >= 100) {
+            int centena = (int) (n / 100);
+            int resto = (int) (n % 100);
+            String nombreString = "";
+
+            if (centena == 1) {
+                nombreString = "Cent";
+            } else {
+                nombreString = say(centena) + "-cents";
+            }
+            String espai = "";
+            if (resto != 0) {
+                espai = " ";
+                nombreString += espai + say(resto).toLowerCase();
+            }
+            return nombreString;
         }
         return null;
     }

@@ -1,3 +1,4 @@
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
 import static org.testng.AssertJUnit.assertEquals;
@@ -47,6 +48,26 @@ public class NumbersCatTest {
     @Test
     public void donat21() {
         assertEquals(("Vint-i-un"), NumbersCat.say(21l));
+    }
+
+    @Test
+    public void donat100() {
+        assertEquals(("Cent"), NumbersCat.say(100l));
+    }
+
+    @Test
+    public void donat200() {
+        assertEquals(("Dos-cents"), NumbersCat.say(200l));
+    }
+
+    @Test
+    public void donat427() {
+        assertEquals(("Quatre-cents vint-i-set"), NumbersCat.say(427l));
+    }
+
+    @Test
+    public void donat999() {
+        assertEquals(("Nou-cents noranta-nou"), NumbersCat.say(999l));
     }
 }
 
