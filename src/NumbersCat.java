@@ -26,18 +26,29 @@ public class NumbersCat {
             case 9:
                 return "Nou";
         }
-        
-        switch ((int) n){
+
+        switch ((int) n) {
             case 30:
                 return "Trenta";
+            case 40:
+                return "Quaranta";
+            case 50:
+                return "Cinquanta";
+            case 60:
+                return "Seixanta";
+            case 70:
+                return "Setanta";
+            case 80:
+                return "Vuitanta";
+            case 90:
+                return "Noranta";
         }
 
         int unidad = 0;
         int decena = 0;
-        if( n > 30){
-            unidad = (int)n % 10;
-            decena = (int)n / 10;
-            say(decena);
+        if (n > 30) {
+            unidad = (int) n % 10;
+            decena = 10 * ((int) n / 10);
             return say(decena) + "-" + say(unidad).toLowerCase();
         }
         return null;
