@@ -1,7 +1,6 @@
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotSame;
 
 public class NumbersCatTest {
     /*
@@ -87,4 +86,13 @@ public class NumbersCatTest {
     public void donat_1057_retorna_Mil_cinquanta_set(){
         assertEquals("Mil cinquanta-set", NumbersCat.say(1057l));
     }
+
+    @Test
+    public void donat_100_000(){assertEquals("Cent mil",NumbersCat.say(100000l));}
+
+    @Test
+    public void donat_760_045(){assertEquals("Set-cents seixanta mil quaranta-cinc",NumbersCat.say(760045l));}
+
+    @Test
+    public void donat_1_000_000(){assertEquals("Milió",NumbersCat.say(1000000));}
 }

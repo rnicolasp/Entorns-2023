@@ -69,10 +69,17 @@ public class NumbersCat {
             String nombre = calculaNombre(n, divisor, xifra, xifres);
             return nombre;
         }
-        if (n > 999) {
+        if (n > 999 && n < 1000000) {
             divisor = 1000;
             xifra = "Mil";
             xifres = " mil";
+            String nombre = calculaNombre(n, divisor, xifra, xifres);
+            return nombre;
+        }
+        if (n > 999_999) {
+            divisor = 1000000;
+            xifra = "Milió";
+            xifres = " milions";
             String nombre = calculaNombre(n, divisor, xifra, xifres);
             return nombre;
         }
