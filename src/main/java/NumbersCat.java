@@ -47,9 +47,9 @@ public class NumbersCat {
                 return "Noranta";
         }
 
-        int unitat;
-        int decena;
-        int divisor;
+        long unitat;
+        long decena;
+        long divisor;
         String xifra;
         String xifres;
 
@@ -86,10 +86,10 @@ public class NumbersCat {
         return null;
     }
 
-    private static String calculaNombre(long n, int divisor, String xifra, String xifres) {
+    private static String calculaNombre(long n, long divisor, String xifra, String xifres) {
         String nombre = "";
-        int centena = (int) (n / divisor);
-        int resto = (int) (n % divisor);
+        long centena = n / divisor;
+        long resto = n % divisor;
         String espai = " ";
         nombre = centena == 1 ? xifra : say(centena) + xifres;
         nombre += resto != 0 ? espai + say(resto).toLowerCase() : "";
