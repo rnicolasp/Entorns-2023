@@ -47,11 +47,11 @@ public class NumbersCat {
                 return "Noranta";
         }
 
-        int unitat = 0;
-        int decena = 0;
-        int divisor = 0;
-        String xifra = "";
-        String xifres = "";
+        int unitat;
+        int decena;
+        int divisor;
+        String xifra;
+        String xifres;
 
         if (n > 20 && n < 100) {
             unitat = (int) n % 10;
@@ -91,15 +91,8 @@ public class NumbersCat {
         int centena = (int) (n / divisor);
         int resto = (int) (n % divisor);
         String espai = " ";
-
-        if (centena == 1) {
-            nombre = xifra;
-        } else {
-            nombre = say(centena) + xifres;
-        }
-        if (resto != 0) {
-            nombre += espai + say(resto).toLowerCase();
-        }
+        nombre = centena == 1 ? xifra : say(centena) + xifres;
+        nombre += resto != 0 ? espai + say(resto).toLowerCase() : "";
         return nombre;
     }
 
