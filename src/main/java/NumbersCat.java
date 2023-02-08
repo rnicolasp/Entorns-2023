@@ -54,12 +54,11 @@ public class NumbersCat {
         String xifres;
 
         if (n > 20 && n < 100) {
-            unitat = (int) n % 10;
-            decena = 10 * ((int) n / 10);
-            if (n < 30) {
-                return say(decena) + "-i-" + say(unitat).toLowerCase();
-            }
-            return say(decena) + "-" + say(unitat).toLowerCase();
+            unitat = n % 10;
+            decena = 10 * (n / 10);
+            String resultat = n < 30 ? say(decena) + "-i-" + say(unitat).toLowerCase()
+                    : say(decena) + "-" + say(unitat).toLowerCase();
+            return resultat;
         }
 
         if (n >= 100 && n < 1000) {
