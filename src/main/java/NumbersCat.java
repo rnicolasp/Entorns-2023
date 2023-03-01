@@ -46,8 +46,8 @@ public class NumbersCat {
 
         long unitat;
         long decena;
-        long divisor;
-        String xifra;
+        long divisor = 0;
+        String xifra = "";
         String xifres = "";
 
         if (n > 20 && n < 100) {
@@ -62,24 +62,20 @@ public class NumbersCat {
             divisor = 100;
             xifra = "Cent";
             xifres = "-cents";
-            String nombre = calculaNombre(n, divisor, xifra, xifres);
-            return nombre;
         }
         if (n > 999 && n < 1000000) {
             divisor = 1000;
             xifra = "Mil";
             xifres = " mil";
-            String nombre = calculaNombre(n, divisor, xifra, xifres);
-            return nombre;
+
         }
         if (n > 999_999) {
             divisor = 1000000;
             xifra = "Milió";
             xifres = " milions";
-            String nombre = calculaNombre(n, divisor, xifra, xifres);
-            return nombre;
+
         }
-        return null;
+        return calculaNombre(n, divisor, xifra, xifres);
     }
 
     private static String calculaNombre(long n, long divisor, String xifra, String xifres) {
