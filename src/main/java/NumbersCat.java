@@ -1,5 +1,5 @@
 public class NumbersCat {
-    public static String say(long n) {
+    public static java.lang.String say(long n) {
         if (n < 0) {
             return "Menys " + say(-n).toLowerCase();
         }
@@ -24,9 +24,6 @@ public class NumbersCat {
                 return "Vuit";
             case 9:
                 return "Nou";
-        }
-
-        switch ((int) n) {
             case 10:
                 return "Deu";
             case 20:
@@ -51,7 +48,7 @@ public class NumbersCat {
         long decena;
         long divisor;
         String xifra;
-        String xifres;
+        String xifres = "";
 
         if (n > 20 && n < 100) {
             unitat = n % 10;
@@ -89,9 +86,8 @@ public class NumbersCat {
         String nombre = "";
         long centena = n / divisor;
         long resto = n % divisor;
-        String espai = " ";
         nombre = centena == 1 ? xifra : say(centena) + xifres;
-        nombre += resto != 0 ? espai + say(resto).toLowerCase() : "";
+        nombre += resto != 0 ? " " + say(resto).toLowerCase() : "";
         return nombre;
     }
 
